@@ -13,7 +13,7 @@ typedef struct{
 
 AlunoEscolar ae[MAX];
 
-void passarNomeStruct(AlunoEscolar alunoE[]){
+void informarDadosAlunos(AlunoEscolar alunoE[]){
   int i = 0;
   for(i = 0; i < MAX; i++){
     printf("Digite o %d nome: ", i + 1);
@@ -41,7 +41,7 @@ void impressaoDadosAlunos(AlunoEscolar aE[]){
   }
 }
 
-void revisarAprovacao(AlunoEscolar alEs[]){
+void validadorDeStatusAlunos(AlunoEscolar alEs[]){
   int i = 0;
   for(i = 0; i < MAX ; i++){
     if(alEs[i].notaFinal >= 6.0){
@@ -61,14 +61,13 @@ void impressaoStatusAlunos(){
 
 void iniciarPrograma(){
 
-  passarNomeStruct(ae);
+  informarDadosAlunos(ae);
   impressaoDadosAlunos(ae);
-  revisarAprovacao(ae);
+  validadorDeStatusAlunos(ae);
   impressaoStatusAlunos();
 }
 
 int main(){
-
   iniciarPrograma();
   return 0;
 }
